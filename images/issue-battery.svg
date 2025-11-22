@@ -1,29 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
   <style>
-    @keyframes lowBattery {
+    @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    @keyframes empty {
-      0%, 100% { opacity: 0.2; }
       50% { opacity: 0.5; }
     }
-    .battery-level { animation: lowBattery 1.5s ease-in-out infinite; }
-    .empty-indicator { animation: empty 1.5s ease-in-out infinite; }
+    .pulse { animation: pulse 1.5s ease-in-out infinite; }
   </style>
-  <!-- Battery outline -->
-  <rect x="30" y="35" width="80" height="50" rx="4" stroke="#ef4444" stroke-width="3" fill="none"/>
-  <!-- Battery positive terminal -->
-  <rect x="108" y="47" width="8" height="26" rx="2" fill="#ef4444"/>
-  <!-- Low battery level (red, pulsing) -->
-  <rect class="battery-level" x="35" y="40" width="20" height="40" rx="2" fill="#ef4444" opacity="0.6"/>
-  <!-- Empty indicator -->
-  <rect class="empty-indicator" x="35" y="40" width="70" height="40" rx="2" fill="#fee2e2" opacity="0.3"/>
-  <!-- Warning X -->
-  <line x1="60" y1="50" x2="80" y2="70" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
-  <line x1="80" y1="50" x2="60" y2="70" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Simplified camera icon with battery issue -->
+  <g transform="translate(70, 50)">
+    <!-- Camera body outline -->
+    <rect x="-30" y="-20" width="60" height="40" rx="4" stroke="#1a1a1a" stroke-width="2.5" fill="#ffffff"/>
+    
+    <!-- Viewfinder -->
+    <rect x="-15" y="-20" width="30" height="12" rx="2" fill="#1a1a1a" opacity="0.2"/>
+    
+    <!-- Lens -->
+    <circle cx="0" cy="5" r="12" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+    
+    <!-- Battery icon (prominent, top center) -->
+    <g transform="translate(0, -35)">
+      <rect x="-12" y="-6" width="24" height="14" rx="2" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+      <rect x="12" y="-3" width="3" height="8" rx="1" fill="#ef4444"/>
+      <!-- Low/empty battery -->
+      <rect x="-9" y="-3" width="5" height="8" rx="1" fill="#ef4444" opacity="0.7" class="pulse"/>
+      <!-- Error X -->
+      <line x1="-8" y1="-4" x2="-4" y2="0" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-4" y1="-4" x2="-8" y2="0" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
 </svg>
-
-
-
-

@@ -2,39 +2,35 @@
   <style>
     @keyframes buttonError {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      50% { opacity: 0.5; }
     }
-    .button { animation: buttonError 1.5s ease-in-out infinite; }
+    .button-error { animation: buttonError 1.5s ease-in-out infinite; }
   </style>
-  <!-- Device outline -->
-  <rect x="30" y="40" width="80" height="50" rx="5" stroke="#ef4444" stroke-width="3" fill="none"/>
-  <!-- Buttons (not working) -->
-  <!-- Button 1 -->
-  <circle class="button" cx="50" cy="60" r="8" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
-  <line x1="47" y1="57" x2="53" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="53" y1="57" x2="47" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
   
-  <!-- Button 2 -->
-  <circle class="button" cx="70" cy="60" r="8" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
-  <line x1="67" y1="57" x2="73" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="73" y1="57" x2="67" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  
-  <!-- Button 3 -->
-  <circle class="button" cx="90" cy="60" r="8" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
-  <line x1="87" y1="57" x2="93" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="93" y1="57" x2="87" y2="63" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  
-  <!-- Button 4 (bottom row) -->
-  <circle class="button" cx="60" cy="75" r="8" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
-  <line x1="57" y1="72" x2="63" y2="78" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="63" y1="72" x2="57" y2="78" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  
-  <!-- Button 5 -->
-  <circle class="button" cx="80" cy="75" r="8" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
-  <line x1="77" y1="72" x2="83" y2="78" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="83" y1="72" x2="77" y2="78" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+  <!-- Simplified camera icon with button issues -->
+  <g transform="translate(70, 50)">
+    <!-- Camera body outline -->
+    <rect x="-30" y="-20" width="60" height="40" rx="4" stroke="#1a1a1a" stroke-width="2.5" fill="#ffffff"/>
+    
+    <!-- Viewfinder -->
+    <rect x="-15" y="-20" width="30" height="12" rx="2" fill="#1a1a1a" opacity="0.2"/>
+    
+    <!-- Lens -->
+    <circle cx="0" cy="5" r="12" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+    
+    <!-- Buttons (on back - not working) -->
+    <circle class="button-error" cx="-32" cy="-8" r="4" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
+    <circle class="button-error" cx="-32" cy="0" r="4" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
+    <circle class="button-error" cx="-32" cy="8" r="4" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-dasharray="2,2"/>
+    
+    <!-- Buttons icon (top) -->
+    <g transform="translate(0, -38)">
+      <circle cx="-6" cy="0" r="3.5" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+      <circle cx="0" cy="0" r="3.5" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+      <circle cx="6" cy="0" r="3.5" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+      <!-- Error X on first button -->
+      <line x1="-8" y1="-2" x2="-4" y2="2" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-4" y1="-2" x2="-8" y2="2" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
 </svg>
-
-
-
-

@@ -5,22 +5,65 @@
       50% { opacity: 1; }
     }
     .fungus { animation: fungus 2s ease-in-out infinite; }
+    @keyframes grow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .grow { animation: grow 3s ease-in-out infinite; }
   </style>
-  <!-- Lens outline -->
-  <circle cx="70" cy="70" r="35" stroke="#ef4444" stroke-width="3" fill="none"/>
-  <!-- Lens glass -->
-  <circle cx="70" cy="70" r="28" fill="#fee2e2" opacity="0.3"/>
-  <!-- Fungus spots -->
-  <circle class="fungus" cx="60" cy="60" r="4" fill="#ef4444" opacity="0.7"/>
-  <circle class="fungus" cx="75" cy="65" r="3" fill="#ef4444" opacity="0.7"/>
-  <circle class="fungus" cx="65" cy="75" r="3.5" fill="#ef4444" opacity="0.7"/>
-  <circle class="fungus" cx="80" cy="70" r="2.5" fill="#ef4444" opacity="0.7"/>
-  <circle class="fungus" cx="70" cy="80" r="3" fill="#ef4444" opacity="0.7"/>
-  <!-- Fungus web pattern -->
-  <path class="fungus" d="M 60 60 Q 70 65, 75 65" stroke="#ef4444" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <path class="fungus" d="M 65 75 Q 70 70, 80 70" stroke="#ef4444" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- DSLR Camera - Fungus Issue -->
+  <g transform="translate(20, 25)">
+    <!-- Main camera body -->
+    <rect x="0" y="0" width="100" height="75" rx="6" fill="url(#bodyGrad)" stroke="#ef4444" stroke-width="3"/>
+    
+    <!-- Camera top section -->
+    <rect x="5" y="0" width="90" height="25" rx="3" fill="#1a1a1a"/>
+    
+    <!-- Viewfinder hump -->
+    <rect x="30" y="0" width="40" height="20" rx="2" fill="#2d3748"/>
+    <rect x="32" y="2" width="36" height="16" rx="1" fill="#fee2e2" opacity="0.2"/>
+    
+    <!-- Lens mount area -->
+    <circle cx="50" cy="45" r="22" fill="#1a1a1a"/>
+    <circle cx="50" cy="45" r="20" stroke="#ef4444" stroke-width="2" fill="#2d3748"/>
+    
+    <!-- Lens with fungus -->
+    <circle cx="50" cy="45" r="18" stroke="#ef4444" stroke-width="2" fill="#1e293b"/>
+    <circle cx="50" cy="45" r="16" fill="#000000" opacity="0.5"/>
+    <circle cx="50" cy="45" r="14" fill="#1e293b" opacity="0.3"/>
+    
+    <!-- Lens glass with spots -->
+    <circle cx="50" cy="45" r="12" fill="#fee2e2" opacity="0.2"/>
+    
+    <!-- Fungus spots (animated) -->
+    <circle class="fungus grow" cx="42" cy="40" r="3" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="55" cy="42" r="2.5" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="48" cy="50" r="3.5" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="58" cy="48" r="2" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="52" cy="52" r="2.5" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="45" cy="52" r="2" fill="#ef4444" opacity="0.8"/>
+    <circle class="fungus grow" cx="56" cy="54" r="3" fill="#ef4444" opacity="0.8"/>
+    
+    <!-- Fungus web/spread pattern -->
+    <path class="fungus" d="M 42 40 Q 48 45, 55 42" stroke="#ef4444" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path class="fungus" d="M 48 50 Q 52 49, 58 48" stroke="#ef4444" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path class="fungus" d="M 52 52 Q 50 54, 56 54" stroke="#ef4444" stroke-width="1.5" fill="none" opacity="0.6"/>
+    
+    <!-- Mode dial -->
+    <circle cx="75" cy="15" r="8" fill="#374151" stroke="#ef4444" stroke-width="1"/>
+    
+    <!-- Hot shoe -->
+    <rect x="45" y="0" width="10" height="8" fill="#1a1a1a"/>
+    
+    <!-- Display screen (showing fungus issue) -->
+    <rect x="55" y="50" width="40" height="20" rx="2" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    <circle class="fungus" cx="75" cy="60" r="4" fill="#ef4444" opacity="0.5"/>
+  </g>
 </svg>
-
-
-
-

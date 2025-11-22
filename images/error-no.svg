@@ -2,19 +2,53 @@
   <style>
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+      50% { opacity: 0.85; }
     }
     .checkmark { animation: pulse 2s ease-in-out infinite; }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 2px #10b981); }
+      50% { filter: drop-shadow(0 0 4px #10b981); }
+    }
+    .glow { animation: glow 2s ease-in-out infinite; }
   </style>
-  <!-- Camera body -->
-  <rect x="30" y="35" width="80" height="50" rx="5" stroke="#10b981" stroke-width="3" fill="none"/>
-  <!-- Lens -->
-  <circle cx="70" cy="60" r="18" stroke="#10b981" stroke-width="3" fill="none"/>
-  <circle cx="70" cy="60" r="12" fill="#d1fae5" opacity="0.3"/>
-  <!-- Checkmark -->
-  <path class="checkmark" d="M 65 60 L 70 65 L 75 55" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- DSLR Camera - No Error -->
+  <g transform="translate(20, 25)">
+    <!-- Main camera body -->
+    <rect x="0" y="0" width="100" height="75" rx="6" fill="url(#bodyGrad)" stroke="#10b981" stroke-width="3"/>
+    
+    <!-- Camera top section -->
+    <rect x="5" y="0" width="90" height="25" rx="3" fill="#1a1a1a"/>
+    
+    <!-- Viewfinder hump -->
+    <rect x="30" y="0" width="40" height="20" rx="2" fill="#2d3748"/>
+    <rect x="32" y="2" width="36" height="16" rx="1" fill="#4a5568"/>
+    
+    <!-- Lens mount area -->
+    <circle cx="50" cy="45" r="22" fill="#1a1a1a"/>
+    <circle cx="50" cy="45" r="20" stroke="#10b981" stroke-width="2" fill="#2d3748"/>
+    
+    <!-- Lens (properly attached) -->
+    <circle cx="50" cy="45" r="18" stroke="#64748b" stroke-width="2" fill="#1e293b"/>
+    <circle cx="50" cy="45" r="14" fill="#000000" opacity="0.6"/>
+    
+    <!-- Mode dial -->
+    <circle cx="75" cy="15" r="8" fill="#374151" stroke="#4a5568" stroke-width="1"/>
+    
+    <!-- Hot shoe -->
+    <rect x="45" y="0" width="10" height="8" fill="#1a1a1a"/>
+    
+    <!-- Display screen (showing normal operation) -->
+    <rect x="55" y="50" width="40" height="20" rx="2" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+    
+    <!-- Checkmark indicator - No Error -->
+    <circle class="glow" cx="85" cy="20" r="8" fill="#10b981" opacity="0.2"/>
+    <path class="checkmark" d="M 81 20 L 84 23 L 89 18" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>
-
-
-
-

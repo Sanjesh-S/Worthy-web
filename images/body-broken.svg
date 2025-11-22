@@ -2,22 +2,62 @@
   <style>
     @keyframes crack {
       0%, 100% { stroke-dashoffset: 0; }
-      50% { stroke-dashoffset: 4; }
+      50% { stroke-dashoffset: 6; }
     }
     .crack { animation: crack 1s ease-in-out infinite; }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    .broken { animation: flicker 1.5s ease-in-out infinite; }
   </style>
-  <!-- Device body outline (broken) -->
-  <rect x="25" y="30" width="90" height="60" rx="6" stroke="#ef4444" stroke-width="3" fill="none"/>
-  <!-- Broken pieces -->
-  <rect x="30" y="35" width="35" height="25" rx="2" fill="#fee2e2" opacity="0.3"/>
-  <rect x="70" y="35" width="40" height="30" rx="2" fill="#fee2e2" opacity="0.3"/>
-  <rect x="30" y="65" width="80" height="20" rx="2" fill="#fee2e2" opacity="0.3"/>
-  <!-- Crack lines -->
-  <path class="crack" d="M 65 35 L 65 85" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4,2"/>
-  <path class="crack" d="M 30 60 L 110 60" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4,2"/>
-  <path class="crack" d="M 50 40 L 75 70" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="3,2"/>
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- DSLR Camera Body - Broken/Cracked -->
+  <g transform="translate(20, 25)" class="broken">
+    <!-- Main camera body (with visible damage) -->
+    <rect x="0" y="0" width="100" height="75" rx="6" fill="url(#bodyGrad)" stroke="#ef4444" stroke-width="3"/>
+    
+    <!-- Camera top section -->
+    <rect x="5" y="0" width="90" height="25" rx="3" fill="#1a1a1a"/>
+    
+    <!-- Broken pieces visible -->
+    <rect x="30" y="0" width="40" height="20" rx="2" fill="#2d3748" opacity="0.5"/>
+    <rect x="28" y="2" width="44" height="16" rx="1" fill="#fee2e2" opacity="0.2"/>
+    
+    <!-- Viewfinder area (damaged) -->
+    <rect x="30" y="0" width="40" height="20" rx="2" fill="#2d3748"/>
+    <rect x="32" y="2" width="36" height="16" rx="1" fill="#fee2e2" opacity="0.3"/>
+    
+    <!-- Lens mount area (partially damaged) -->
+    <circle cx="50" cy="45" r="22" fill="#1a1a1a"/>
+    <circle cx="50" cy="45" r="20" stroke="#ef4444" stroke-width="2" fill="#2d3748"/>
+    
+    <!-- Lens (cracked appearance) -->
+    <circle cx="50" cy="45" r="18" stroke="#64748b" stroke-width="2" fill="#1e293b"/>
+    <circle cx="50" cy="45" r="14" fill="#000000" opacity="0.6"/>
+    
+    <!-- Mode dial (damaged) -->
+    <circle cx="75" cy="15" r="8" fill="#374151" stroke="#ef4444" stroke-width="1"/>
+    
+    <!-- Hot shoe -->
+    <rect x="45" y="0" width="10" height="8" fill="#1a1a1a"/>
+    
+    <!-- Display screen (cracked) -->
+    <rect x="55" y="50" width="40" height="20" rx="2" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+    
+    <!-- Major crack lines -->
+    <path class="crack" d="M 20 15 L 50 45 L 80 20" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4,3"/>
+    <path class="crack" d="M 50 30 L 50 75" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4,3"/>
+    <path class="crack" d="M 15 40 L 45 70" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="3,2"/>
+    <path class="crack" d="M 75 25 L 95 50" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="3,2"/>
+    
+    <!-- Broken corner piece -->
+    <path d="M 90 5 L 100 5 L 100 15 L 95 12 Z" fill="#fee2e2" opacity="0.4"/>
+  </g>
 </svg>
-
-
-
-

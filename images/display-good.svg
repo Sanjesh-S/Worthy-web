@@ -2,18 +2,67 @@
   <style>
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+      50% { opacity: 0.85; }
     }
     .checkmark { animation: pulse 2s ease-in-out infinite; }
+    @keyframes brightness {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.9; }
+    }
+    .bright { animation: brightness 2.5s ease-in-out infinite; }
   </style>
-  <!-- Screen outline -->
-  <rect x="20" y="25" width="100" height="70" rx="4" stroke="#10b981" stroke-width="3" fill="none"/>
-  <!-- Screen content -->
-  <rect x="30" y="35" width="80" height="50" rx="2" fill="#d1fae5" opacity="0.3"/>
-  <!-- Checkmark -->
-  <path class="checkmark" d="M 45 60 L 60 75 L 95 40" stroke="#10b981" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background DSLR Camera (faded) -->
+  <g opacity="0.15" transform="translate(20, 30) scale(0.6)">
+    <!-- Camera body -->
+    <rect x="0" y="0" width="100" height="70" rx="5" fill="#2d3748" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Camera top -->
+    <rect x="10" y="0" width="80" height="25" rx="3" fill="#1a1a1a"/>
+    <!-- Lens mount -->
+    <circle cx="50" cy="35" r="20" fill="#1a1a1a"/>
+    <!-- Lens -->
+    <circle cx="50" cy="35" r="18" stroke="#4a5568" stroke-width="2" fill="#2d3748"/>
+    <!-- Viewfinder -->
+    <rect x="35" y="5" width="30" height="15" rx="2" fill="#4a5568"/>
+    <!-- Display screen (small in background) -->
+    <rect x="55" y="40" width="35" height="25" rx="2" fill="#d1fae5" opacity="0.5"/>
+  </g>
+  
+  <!-- Close-up Display Screen - Good Condition (foreground) -->
+  <g transform="translate(10, 15)">
+    <!-- Display frame -->
+    <rect x="0" y="0" width="120" height="90" rx="4" fill="#1a1a1a" stroke="#10b981" stroke-width="3"/>
+    <rect x="8" y="8" width="104" height="74" rx="2" fill="#000000"/>
+    
+    <!-- Bright, clear display content -->
+    <rect class="bright" x="12" y="12" width="96" height="66" rx="2" fill="#22c55e" opacity="0.15"/>
+    
+    <!-- Clear screen content -->
+    <g opacity="0.9">
+      <line x1="25" y1="30" x2="95" y2="30" stroke="#10b981" stroke-width="2"/>
+      <line x1="25" y1="40" x2="90" y2="40" stroke="#10b981" stroke-width="2"/>
+      <line x1="25" y1="50" x2="85" y2="50" stroke="#10b981" stroke-width="2"/>
+      <line x1="25" y1="60" x2="90" y2="60" stroke="#10b981" stroke-width="2"/>
+      <line x1="25" y1="70" x2="85" y2="70" stroke="#10b981" stroke-width="2"/>
+    </g>
+    
+    <!-- Checkmark indicator -->
+    <path class="checkmark" d="M 40 50 L 55 65 L 80 45" stroke="#10b981" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    
+    <!-- Display border highlight -->
+    <rect x="8" y="8" width="104" height="74" rx="2" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  
+  <!-- Camera body indicator lines -->
+  <line x1="85" y1="105" x2="95" y2="115" stroke="#64748b" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <line x1="55" y1="110" x2="50" y2="120" stroke="#64748b" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
 </svg>
-
-
-
-

@@ -1,27 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
   <style>
-    @keyframes slotError {
+    @keyframes cardError {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      50% { opacity: 0.6; }
     }
-    .error { animation: slotError 1.5s ease-in-out infinite; }
+    .card-error { animation: cardError 1.5s ease-in-out infinite; }
   </style>
-  <!-- Memory card slot -->
-  <rect x="25" y="40" width="90" height="50" rx="3" stroke="#ef4444" stroke-width="3" fill="none"/>
-  <!-- Slot opening -->
-  <rect x="30" y="45" width="80" height="40" rx="2" fill="#fee2e2" opacity="0.3"/>
-  <!-- Memory card (not inserted properly) -->
-  <rect class="error" x="35" y="50" width="50" height="30" rx="2" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
-  <!-- Error indicator -->
-  <circle class="error" cx="95" cy="65" r="8" fill="#fee2e2" opacity="0.5"/>
-  <line x1="91" y1="61" x2="99" y2="69" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <line x1="99" y1="61" x2="91" y2="69" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-  <!-- Connector pins (not working) -->
-  <line x1="40" y1="75" x2="50" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="55" y1="75" x2="65" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="70" y1="75" x2="80" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Simplified camera icon with memory card issue -->
+  <g transform="translate(70, 50)">
+    <!-- Camera body outline -->
+    <rect x="-30" y="-20" width="60" height="40" rx="4" stroke="#1a1a1a" stroke-width="2.5" fill="#ffffff"/>
+    
+    <!-- Viewfinder -->
+    <rect x="-15" y="-20" width="30" height="12" rx="2" fill="#1a1a1a" opacity="0.2"/>
+    
+    <!-- Lens -->
+    <circle cx="0" cy="5" r="12" stroke="#1a1a1a" stroke-width="2.5" fill="none"/>
+    
+    <!-- Memory card slot (on side) -->
+    <rect x="-32" y="-8" width="6" height="16" rx="1" stroke="#ef4444" stroke-width="2" fill="none"/>
+    
+    <!-- Memory card icon (top) -->
+    <g transform="translate(0, -38)">
+      <rect x="-10" y="-7" width="20" height="14" rx="2" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+      <path d="M -10 -7 L -5 -7 L -10 -3 Z" fill="#ef4444" opacity="0.8"/>
+      <line x1="-7" y1="-5" x2="8" y2="-5" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="4" y="-3" width="4" height="8" rx="0.5" fill="#ef4444" opacity="0.4"/>
+      <!-- Error indicator -->
+      <circle class="card-error" cx="6" cy="-2" r="2" fill="#ef4444"/>
+      <line x1="5" y1="-3" x2="7" y2="-1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="7" y1="-3" x2="5" y2="-1" stroke="#ffffff" stroke-width="0.8" stroke-linecap="round"/>
+    </g>
+  </g>
 </svg>
-
-
-
-
